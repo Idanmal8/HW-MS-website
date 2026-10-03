@@ -1,0 +1,24 @@
+# Hard Will
+
+> Hard Will is a Windows desktop companion for Global MapleStory (GMS). It reads your character and equipment from the game window with Claude (screenshots only; no memory reading or game automation) and tracks gear, level, bosses, dailies and HEXA/Liberation progress. Users sign in with Discord and bring their own Anthropic API key, which is stored in Windows Credential Manager and only sent to Anthropic. macOS is planned. Not affiliated with Nexon.
+
+## Product
+
+- [Home](/): what Hard Will does and FAQ
+- [Download](/download): latest Windows build, requirements, SHA-256 checksums
+
+## Guides
+
+- [Getting started](/guides/getting-started): install, sign in with Discord, add a Claude key, first snapshot
+- [Record your gear](/guides/recording-items): hover items in game to log star force, flames and potentials
+- [Read your dashboard](/guides/reading-your-dashboard): Overview, Equipment, History, Tools, trackers and the Game HUD
+- [Star force calculator](/guides/star-force-calculator): how expected star force cost is computed in GMS v.271
+
+## Key facts
+
+- Platform: Windows 10 and 11 (64-bit). macOS build planned.
+- Game: Global MapleStory (GMS); calculators use v.271 formulas.
+- Reads: name, class, level, EXP %, star force (up to 30★), potential and bonus potential, flames, enhancement stats.
+- Tracks: equipment presets, bosses, dailies, HEXA skills and Liberation; syncs level and world rank from Nexon rankings.
+- Requires: a Discord account to sign in and your own Anthropic API key.
+- Price: free during early access; development is supported through Patreon donations.

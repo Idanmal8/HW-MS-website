@@ -1,0 +1,198 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Monochrome palette: black and white, nothing else. Dark is the default.
+   .theme-invert flips a block to the opposite theme (e.g. the download banner). */
+:root,
+.dark .theme-invert {
+  --radius: 0.75rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(0.985 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.145 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.96 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.96 0 0);
+  --muted-foreground: oklch(0.48 0 0);
+  --accent: oklch(0.94 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.9 0 0);
+  --input: oklch(0.9 0 0);
+  --ring: oklch(0.6 0 0);
+  --grid: oklch(0 0 0 / 0.06);
+  --glow: oklch(0 0 0 / 0.08);
+}
+
+.dark,
+html:not(.dark) .theme-invert {
+  --background: oklch(0.09 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.13 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.13 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.12 0 0);
+  --secondary: oklch(0.2 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.2 0 0);
+  --muted-foreground: oklch(0.68 0 0);
+  --accent: oklch(0.22 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --grid: oklch(1 0 0 / 0.06);
+  --glow: oklch(1 0 0 / 0.1);
+}
+
+@theme inline {
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply scroll-smooth;
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+  ::selection {
+    @apply bg-foreground text-background;
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, var(--grid) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .mask-fade-b {
+    mask-image: linear-gradient(to bottom, black 60%, transparent);
+  }
+  .mask-radial {
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+}
+
+/* Elements GSAP reveals start hidden only when JS runs, so crawlers and
+   no-JS visitors always see the content. */
+.js [data-reveal] {
+  opacity: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.2s ease;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}
+
+/* Guide typography */
+.prose-hw {
+  @apply text-[15.5px] leading-7 text-foreground/85;
+}
+.prose-hw h2 {
+  @apply mt-12 mb-4 scroll-mt-24 text-2xl font-semibold tracking-tight text-foreground;
+}
+.prose-hw h3 {
+  @apply mt-8 mb-3 scroll-mt-24 text-lg font-semibold text-foreground;
+}
+.prose-hw h2 a,
+.prose-hw h3 a {
+  @apply no-underline;
+}
+.prose-hw p {
+  @apply my-4;
+}
+.prose-hw a {
+  @apply font-medium text-foreground underline underline-offset-4 decoration-foreground/30 hover:decoration-foreground;
+}
+.prose-hw ul {
+  @apply my-4 list-disc pl-6 marker:text-muted-foreground;
+}
+.prose-hw ol {
+  @apply my-4 list-decimal pl-6 marker:text-muted-foreground;
+}
+.prose-hw li {
+  @apply my-1.5 pl-1;
+}
+.prose-hw strong {
+  @apply font-semibold text-foreground;
+}
+.prose-hw code:not(pre code) {
+  @apply rounded-md border bg-muted px-1.5 py-0.5 font-mono text-[0.85em] text-foreground;
+}
+.prose-hw pre {
+  @apply my-6 overflow-x-auto rounded-xl border bg-card p-4 font-mono text-sm leading-6;
+}
+.prose-hw blockquote {
+  @apply my-6 border-l-2 border-foreground/40 pl-4 text-muted-foreground;
+}
+.prose-hw hr {
+  @apply my-10;
+}
+.prose-hw table {
+  @apply my-6 w-full text-sm;
+}
+.prose-hw th {
+  @apply border-b py-2 pr-4 text-left font-semibold text-foreground;
+}
+.prose-hw td {
+  @apply border-b py-2 pr-4;
+}
+.dark .prose-hw pre span {
+  color: var(--shiki-dark) !important;
+}

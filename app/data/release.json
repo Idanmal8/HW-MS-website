@@ -1,0 +1,22 @@
+{
+  "version": "0.1.0",
+  "channel": "early-access",
+  "date": "2026-10-03",
+  "notesUrl": "https://github.com/Idanmal8/HW-MS-website/releases",
+  "assets": {
+    "windows": {
+      "available": false,
+      "url": "",
+      "fileName": "HardWill-Setup-0.1.0.exe",
+      "sizeBytes": 0,
+      "sha256": ""
+    },
+    "macos": {
+      "available": false,
+      "url": "",
+      "fileName": "HardWill-0.1.0.dmg",
+      "sizeBytes": 0,
+      "sha256": ""
+    }
+  }
+}
