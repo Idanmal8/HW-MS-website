@@ -15,7 +15,11 @@ useSoftwareSchema()
 useSchemaOrg([defineBreadcrumb({ itemListElement: [{ name: 'Home', item: '/' }, { name: 'Download', item: '/download' }] })])
 
 const requirements: Record<Platform, string[]> = {
-  windows: ['Windows 10 or 11, 64-bit', 'A Discord account to sign in', 'Your own Anthropic API key for Claude'],
+  windows: [
+    'Windows 10 or 11, 64-bit',
+    'A Google, Discord or email account to sign in',
+    'Your own AI API key: Claude, OpenAI or Gemini',
+  ],
   macos: ['macOS build in development', 'Follow the changelog for availability'],
 }
 
@@ -74,7 +78,8 @@ useReveal(root)
       <p class="mt-2 leading-relaxed">
         Early-access builds are new to Microsoft SmartScreen, which warns about apps it has not seen often.
         Choose <strong class="text-foreground">More info → Run anyway</strong>. You can compare the file's SHA-256 above
-        with the one on the <a :href="release.notesUrl" class="text-foreground underline underline-offset-4" rel="noopener">release page</a>.
+        with the downloaded file: in PowerShell, <code class="font-mono text-xs text-foreground">Get-FileHash .\{{ release.assets.windows.fileName }}</code>.
+        Once installed, Hard Will updates itself.
       </p>
     </section>
   </div>

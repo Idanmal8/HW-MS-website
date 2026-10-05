@@ -15,7 +15,8 @@ export const platformLabel: Record<Platform, string> = {
   macos: 'macOS',
 }
 
-// release.json is rewritten by the release workflow, so the version and
+// Starts from release.json; load() replaces it with the newest builds from
+// the Hard Will API (/api/release, at build time), so the version and
 // download links are baked into the pre-rendered HTML on every deploy.
 export const useReleaseStore = defineStore('release', () => {
   const version = ref(release.version)
@@ -41,10 +42,19 @@ export const useReleaseStore = defineStore('release', () => {
   })
   const detectedUnavailable = computed(() => !!detected.value && !assets.value[detected.value].available)
 
+  async function load() {
+    const r = await $fetch('/api/release')
+    version.value = r.version
+    channel.value = r.channel
+    date.value = r.date
+    notesUrl.value = r.notesUrl
+    assets.value = r.assets
+  }
+
   function sizeLabel(p: Platform) {
     const b = assets.value[p].sizeBytes
     return b ? `${(b / 1024 / 1024).toFixed(1)} MB` : ''
   }
 
-  return { version, channel, date, notesUrl, assets, detected, primary, detectedUnavailable, detectPlatform, sizeLabel }
+  return { version, channel, date, notesUrl, assets, detected, primary, detectedUnavailable, detectPlatform, sizeLabel, load }
 })

@@ -19,8 +19,8 @@ export const faqs = [
     a: 'Yes, Hard Will is free while in early access. If it helps you, you can support development on Patreon.',
   },
   {
-    q: 'Do I need a Claude API key?',
-    a: 'Yes. Hard Will reads screenshots with Claude using your own Anthropic API key. The key is stored in Windows Credential Manager and is only ever sent to Anthropic.',
+    q: 'Do I need an AI API key?',
+    a: 'Yes. Hard Will reads screenshots and answers questions with AI using your own API key from Anthropic (Claude), OpenAI or Google (Gemini), and you pay your provider directly. The key is stored in Windows Credential Manager on your PC. Each AI request carries it to the Hard Will API, which uses it for that request only and never stores or logs it.',
   },
   {
     q: 'Is it safe to use with MapleStory?',

@@ -32,12 +32,21 @@ app/components/landing/ landing page sections (hero, features, how it works, FAQ
 app/components/site/    header, footer, logo, theme toggle, download buttons
 app/components/ui/      shadcn-vue components (add more: npx shadcn-vue@latest add <name>)
 app/components/OgImage/ the social preview image template
-app/data/release.json   current version and download links (rewritten by the release workflow)
+app/data/release.json   fallback version and download links (the build reads the newest from the API)
 app/data/site.ts        nav, FAQ (also FAQPage structured data) and the Patreon link
 app/data/characters.ts  placeholder characters for the app mocks (avatars in public/characters)
 content/guides/         guides; front matter `steps` becomes HowTo structured data
 public/llms.txt         summary for AI answer engines
 ```
+
+## Downloads
+
+The Download buttons and version come from the Hard Will API's
+`GET /releases/latest` at build time (`server/api/release.get.ts`), with
+`app/data/release.json` as the fallback when the API is unreachable.
+Publishing a release (the desktop repo's `tools/release.ps1 -Publish`)
+registers it in the API and calls the Vercel deploy hook, so the site
+rebuilds with the new installer.
 
 ## Supporters
 

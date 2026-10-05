@@ -1,15 +1,15 @@
 {
-  "version": "0.1.0",
+  "version": "1.0.0",
   "channel": "early-access",
-  "date": "2026-10-03",
+  "date": "2026-10-04",
   "notesUrl": "https://github.com/Idanmal8/HW-MS-website/releases",
   "assets": {
     "windows": {
-      "available": false,
-      "url": "",
-      "fileName": "HardWill-Setup-0.1.0.exe",
-      "sizeBytes": 0,
-      "sha256": ""
+      "available": true,
+      "url": "https://storage.googleapis.com/hard-will-downloads/windows/HardWill-Setup-1.0.0.exe",
+      "fileName": "HardWill-Setup-1.0.0.exe",
+      "sizeBytes": 13237415,
+      "sha256": "8732f42b9367f3d58cc97af688cbef70729016862d5f3ce16e3d208e56824ebc"
     },
     "macos": {
       "available": false,

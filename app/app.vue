@@ -1,6 +1,10 @@
 <script setup lang="ts">
 const config = useRuntimeConfig().public
 
+// The newest release from the API, fetched once during pre-rendering.
+const release = useReleaseStore()
+await callOnce('release', () => release.load())
+
 useHead({
   titleTemplate: t => (!t || t === 'Hard Will' ? 'Hard Will · MapleStory progression tracker' : t.includes('Hard Will') ? t : `${t} · Hard Will`),
   // Lets CSS hide [data-reveal] only when JS (and so GSAP) will show it again.
