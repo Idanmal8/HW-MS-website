@@ -1,7 +1,7 @@
 ---
 title: Privacy policy
 description: What Hard Will collects, where it is kept, who it is shared with, and how to get it deleted.
-updated: 2026-10-06
+updated: 2026-10-07
 ---
 
 Hard Will is a free desktop companion for MapleStory, made by an independent developer based in Israel. This policy covers the Hard Will desktop app, the Hard Will API that the app talks to, and this website. It says exactly what we handle and why, in plain words.
@@ -11,6 +11,7 @@ Hard Will is a free desktop companion for MapleStory, made by an independent dev
 - Your **account data** (your characters, their gear and progress, your boss and daily trackers) is stored in our database so it follows you between PCs.
 - **Screenshots of the game window** are read by the AI provider *you* choose, with *your* API key. We pass them through and do not keep them.
 - **Your AI key** stays on your PC, encrypted. It travels with each AI request and is never stored or logged on our side.
+- If you connect Google to export to Sheets, Hard Will can only see the files it creates in your Drive, and that connection also stays on your PC.
 - We do not sell data, show ads or use analytics or tracking cookies.
 - You can delete your account and everything in it at any time, in the app: **Settings > Delete account**.
 
@@ -33,6 +34,14 @@ When you take a snapshot, record items, scan your character list or HEXA, the ap
 ### Your AI key
 Your API key is stored only on your PC, encrypted for your Windows user. Each AI request carries it to the Hard Will API, which uses it for that single request to call your provider and then forgets it. It is never written to our database or our logs. You pay your provider directly.
 
+### Google account (Sheets export)
+If you choose **Connect Google** in Settings to export to Google Sheets, you sign in to Google in your browser and allow two things: access to **files Hard Will creates** in your Google Drive (Google's `drive.file` permission; Hard Will cannot see or change any other file), and your **email address**, shown in Settings so you know which account is connected.
+
+- The connection (a Google token) is stored only on your PC, encrypted for your Windows user. It is never sent to Hard Will's servers.
+- When you export, the app writes your Hard Will data (characters, gear, bosses, dailies, EXP) from your PC straight into a spreadsheet called *hard-will-progression-sheet* in your Drive. Our servers are not involved and keep no copy.
+- **Disconnect** in Settings revokes the connection with Google and deletes it from your PC; uninstalling deletes it too. The spreadsheet stays in your Drive until you delete it. You can also remove Hard Will's access at any time in your Google Account settings, under third-party connections.
+- Hard Will's use of information received from Google APIs adheres to the [Google API Services User Data Policy](https://developers.google.com/terms/api-services-user-data-policy), including the Limited Use requirements: the data is used only to write your export, is not transferred to anyone, and is not used for advertising.
+
 ### Search
 Guide search looks through an index we build from public pages of Grandis Library, the MapleStory Wiki and Nexon's news. Your searches are not saved by the app.
 
@@ -44,7 +53,7 @@ If you support Hard Will on Patreon, Patreon shares your name, tier and pledge s
 
 ## Data on your PC
 
-The app keeps a folder on your PC (`%LOCALAPPDATA%\Hard Will` for the website installer) with: captured screenshots and item tooltips, item icons and character pictures, your layout choices, an error log, a record of your daily AI spending, and your sign-in and AI key, encrypted. **Uninstalling Hard Will deletes this folder.** It never leaves your PC except for the AI requests described above.
+The app keeps a folder on your PC (`%LOCALAPPDATA%\Hard Will` for the website installer) with: captured screenshots and item tooltips, item icons and character pictures, your layout choices, an error log, a record of your daily AI spending, and your sign-in, AI key and Google connection (if any), encrypted. **Uninstalling Hard Will deletes this folder.** It never leaves your PC except for the AI requests described above.
 
 ## Other services the app contacts directly
 
@@ -62,7 +71,7 @@ Your account and game data are stored with Supabase in the European Union (Irela
 
 ## Who we share data with
 
-Only the service providers above, each for the purpose described: Google (sign-in, hosting, logs), Supabase (database), Vercel (website), the AI provider you choose (screen reading and AI search, with your key) and Patreon (if you support). We do not sell or rent personal data, and we do not share it for advertising.
+Only the service providers above, each for the purpose described: Google (sign-in, hosting, logs, and your own Drive if you export to Sheets), Supabase (database), Vercel (website), the AI provider you choose (screen reading and AI search, with your key) and Patreon (if you support). We do not sell or rent personal data, and we do not share it for advertising.
 
 ## How long we keep it
 
