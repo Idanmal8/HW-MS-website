@@ -17,5 +17,14 @@ export default defineContentConfig({
         sitemap: defineSitemapSchema(),
       }),
     }),
+    legal: defineCollection({
+      type: 'page',
+      source: 'legal/*.md',
+      schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        updated: z.string(),
+      }),
+    }),
   },
 })

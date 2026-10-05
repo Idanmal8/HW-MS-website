@@ -14,12 +14,16 @@ const columns = [
     { label: 'Getting started', to: '/guides/getting-started' },
     { label: 'Recording your gear', to: '/guides/recording-items' },
   ] },
+  { title: 'Legal', links: [
+    { label: 'Privacy policy', to: '/privacy' },
+    { label: 'Terms of service', to: '/terms' },
+  ] },
 ]
 </script>
 
 <template>
   <footer class="border-t">
-    <div class="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
+    <div class="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
       <div class="space-y-4">
         <SiteLogo with-text />
         <p class="max-w-xs text-sm text-muted-foreground">
