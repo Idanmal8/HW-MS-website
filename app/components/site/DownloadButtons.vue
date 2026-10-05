@@ -33,5 +33,6 @@ const order = computed<Platform[]>(() => (release.primary === 'macos' ? ['macos'
   </div>
   <p class="mt-4 text-center font-mono text-xs text-muted-foreground">
     <Download class="mr-1 inline size-3" aria-hidden="true" />v{{ release.version }} · {{ release.channel }} · {{ release.date }}
+    · <NuxtLink to="/changelog" class="underline underline-offset-4 hover:text-foreground">What's new</NuxtLink>
   </p>
 </template>
