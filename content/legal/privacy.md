@@ -1,7 +1,7 @@
 ---
 title: Privacy policy
 description: What Hard Will collects, where it is kept, who it is shared with, and how to get it deleted.
-updated: 2026-10-05
+updated: 2026-10-06
 ---
 
 Hard Will is a free desktop companion for MapleStory, made by an independent developer based in Israel. This policy covers the Hard Will desktop app, the Hard Will API that the app talks to, and this website. It says exactly what we handle and why, in plain words.
@@ -12,7 +12,7 @@ Hard Will is a free desktop companion for MapleStory, made by an independent dev
 - **Screenshots of the game window** are read by the AI provider *you* choose, with *your* API key. We pass them through and do not keep them.
 - **Your AI key** stays on your PC, encrypted. It travels with each AI request and is never stored or logged on our side.
 - We do not sell data, show ads or use analytics or tracking cookies.
-- You can ask us to delete your account and everything in it at any time.
+- You can delete your account and everything in it at any time, in the app: **Settings > Delete account**.
 
 ## What we collect and why
 
@@ -66,11 +66,11 @@ Only the service providers above, each for the purpose described: Google (sign-i
 
 ## How long we keep it
 
-Account and game data are kept until you delete it or ask us to delete your account. Server logs are deleted automatically, normally within 30 days.
+Account and game data are kept until you delete it or your account. Deleting your account removes it from our database immediately, along with your sign-in. Server logs are deleted automatically, normally within 30 days.
 
 ## Your choices and rights
 
-You can view and change your data in the app, delete characters in the app at any time, and uninstall the app to remove everything stored on your PC. You can ask us to **export or delete all your data**, or to correct it, by contacting us (below); we will do it within 30 days. Depending on where you live (for example under the EU GDPR or Israel's Privacy Protection Law) you may have further rights, including complaining to your local data protection authority.
+You can view and change your data in the app, delete characters at any time, and **delete your whole account** in **Settings > Delete account**: your characters and everything recorded for them, your trackers and planners, and your sign-in are deleted for good. Uninstalling the app removes everything stored on your PC. You can also ask us to export or correct your data, or to delete it for you, by contacting us (below); we will do it within 30 days. Depending on where you live (for example under the EU GDPR or Israel's Privacy Protection Law) you may have further rights, including complaining to your local data protection authority.
 
 ## Children
 

@@ -1,7 +1,7 @@
 ---
 title: Terms of service
 description: The rules for using the Hard Will app, the Hard Will API and this website.
-updated: 2026-10-05
+updated: 2026-10-06
 ---
 
 These terms apply to the Hard Will desktop app, the Hard Will API it uses and this website (together, "Hard Will"). By installing or using Hard Will you agree to them. If you do not agree, do not use Hard Will.
@@ -51,7 +51,7 @@ To the fullest extent the law allows, the developer of Hard Will is not liable f
 
 ## Ending
 
-You can stop using Hard Will at any time, uninstall it and ask us to delete your account. We may end your access if you break these terms.
+You can stop using Hard Will at any time: delete your account in **Settings > Delete account** and uninstall the app. We may end your access if you break these terms.
 
 ## Law
 
